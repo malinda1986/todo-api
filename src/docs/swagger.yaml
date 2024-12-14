@@ -1,0 +1,97 @@
+# src/docs/swagger.yaml
+
+openapi: 3.0.0
+info:
+  title: Todo API
+  version: 1.0.0
+  description: API documentation for the Todo application
+  contact:
+    name: malinda
+    email: malindar11@gmail.com
+servers:
+  - url: 'http://localhost:3008/api/v1'
+tags:
+  - name: todos
+    description: todo routes
+  - name: users
+    description: users routes
+paths:
+  /todos:
+    get:
+      summary: Retrieve all todos
+      tags:
+        - todos
+      responses:
+        '200':
+          description: A list of todos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    description:
+                      type: string
+    post:
+      summary: Create a new todo
+      tags:
+        - todos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Todo created successfully
+  /users:
+    get:
+      summary: Fetch all users from external API
+      tags:
+        - users
+      responses:
+        '200':
+          description: A list of users fetched from external API
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    username:
+                      type: string
+                    email:
+                      type: string
+                    address:
+                      type: object
+                      properties:
+                        street:
+                          type: string
+                        suite:
+                          type: string
+                        city:
+                          type: string
+                        zipcode:
+                          type: string
+                    phone:
+                      type: string
+                    website:
+                      type: string
+        '500':
+          description: Internal server error while fetching users

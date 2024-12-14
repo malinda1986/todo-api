@@ -1,0 +1,47 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "A Node.js project using ES modules and dependency injection with InversifyJS.",
+  "main": "start.js",
+  "type": "module",
+  "scripts": {
+    "start": "babel-node start.js",
+    "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "dev": "nodemon --exec babel-node start.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "inversify": "^6.2.0",
+    "multer": "^1.4.5-lts.1",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.0.3",
+    "winston": "^3.17.0",
+    "yamljs": "^0.3.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-proposal-decorators": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "babel-node": "^0.0.1-security",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [],
+  "author": "Malinda Ranasinghe",
+  "license": "MIT"
+}
